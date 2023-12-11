@@ -10,7 +10,7 @@ public class Main {
 
         Entrepot entrepot1 = new Entrepot();
 
-        UseEntrepot.ajouterA2SiAbsent(entrepot1, 'A', 2, "A2");
+        UseEntrepot.ajouterProduit(entrepot1, 'A', 2, "A2");
     }
 
 }

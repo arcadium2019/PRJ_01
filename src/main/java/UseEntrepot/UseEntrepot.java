@@ -7,7 +7,7 @@ import Classes.Volume;
 
 public class UseEntrepot {
     // Méthode pour ajouter un produit A2 et créer les objets nécessaires s'ils n'existent pas
-    public static void ajouterA2SiAbsent(Entrepot entrepot, char nomCategorie, int nomVolume, String nomProduitA2) {
+    public static void ajouterProduit(Entrepot entrepot, char nomCategorie, int nomVolume, String nomProduitA2) {
         Categorie categorieExistante = null;
         for (Categorie categorie : entrepot.getListeCategories()) {
             if (categorie.getIdCat() == nomCategorie) {
