@@ -10,10 +10,7 @@ public class Main {
 
         Entrepot entrepot1 = new Entrepot();
 
-        entrepot1.ajouterProduit('A', 2, "A2");
-        entrepot1.ajouterProduit('A', 2, "A2");
-        entrepot1.ajouterProduit('B', 3, "B3");
-        entrepot1.ajouterProduit('C', 4, "C4");
+        entrepot1.ajouterProduitsEnLot();
 
         UseEntrepot.afficherContenuEntrepot(entrepot1);
     }

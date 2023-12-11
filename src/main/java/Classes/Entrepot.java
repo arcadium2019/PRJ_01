@@ -2,6 +2,7 @@ package Classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Entrepot {
 
@@ -64,7 +65,31 @@ public class Entrepot {
         Produit produit = new Produit(nomProduit);
         volumeExistant.ajouterProduit(produit);
 
-        System.out.println("Produit " +nomProduit.toString()+ " ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
+        System.out.println("Produit ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
     }
+
+    public void ajouterProduitsEnLot() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Combien de produits souhaitez-vous ajouter ?");
+        int nombreProduits = scanner.nextInt();
+
+        scanner.nextLine();
+
+        for (int i = 0; i < nombreProduits; i++) {
+            System.out.println("Entrez le nom de la catégorie :");
+            char nomCategorie = scanner.next().charAt(0);
+
+            System.out.println("Entrez le numéro du volume :");
+            int nomVolume = scanner.nextInt();
+
+            scanner.nextLine();
+
+            String nomProduit = String.valueOf(nomCategorie) + nomVolume;
+
+            ajouterProduit(nomCategorie, nomVolume, nomProduit);
+        }
+    }
+
+
 
 }
