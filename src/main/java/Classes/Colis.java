@@ -11,6 +11,10 @@ public class Colis {
         produits = new ArrayList<>();
     }
 
+    public void Empiler(){
+        // a rediger
+    }
+
     public List<Produit> getContenuColis() {
         return produits;
     }
