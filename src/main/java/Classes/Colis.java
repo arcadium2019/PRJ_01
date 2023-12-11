@@ -11,6 +11,7 @@ public class Colis {
         produits = new ArrayList<>();
     }
 
+    // méthode permettant de ranger du plus grand volume au plus petit tous les Produits dans le Colis
     public void Empiler(){
         // a rediger
     }

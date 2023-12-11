@@ -13,10 +13,13 @@ public class Volume {
         this.idVol = idVol;
     }
 
+    // méthode permettant d’ajouter un produit en fin de liste
     public void ajouterProduit(Produit produit) {
         produits.add(produit);
     }
 
+    // méthode permettant de sortir le premier élément de la liste pour l’envoyer dans une commande
+    // (retourne le dernier élément de la liste)
     public void supprimerProduit(Produit produit) {
         produits.remove(produit);
     }
