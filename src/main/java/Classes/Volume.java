@@ -1,4 +1,4 @@
-package Entrepos;
+package Classes;
 
 import java.util.ArrayList;
 import java.util.List;

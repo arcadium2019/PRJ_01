@@ -1,4 +1,4 @@
-package Entrepos;
+package Classes;
 
 public class Produit {
 
