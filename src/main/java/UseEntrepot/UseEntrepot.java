@@ -44,7 +44,7 @@ public class UseEntrepot {
     }
 
     // Méthode pour afficher le contenu de l'entrepôt
-    public static void afficherContenuEntrepot(Entrepot entrepot) {
+    public void afficherContenuEntrepot(Entrepot entrepot) {
         List<Categorie> categories = entrepot.getListeCategories();
 
         if (categories.isEmpty()) {

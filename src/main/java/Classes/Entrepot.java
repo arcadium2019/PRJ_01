@@ -25,4 +25,49 @@ public class Entrepot {
         return categories;
     }
 
+    public Categorie VerifCat(Categorie categorieExistante, char nomCategorie){
+        for (Categorie categorie : getListeCategories()) {
+            if (categorie.getIdCat() == nomCategorie) {
+                categorieExistante = categorie;
+                break;
+            }
+        }
+        if (categorieExistante == null) {
+            categorieExistante = new Categorie(nomCategorie);
+            ajouterCategorie(categorieExistante);
+        }
+        return categorieExistante;
+    }
+
+    public Volume VerifVol(Volume volumeExistant, Categorie categorieExistante, int nomVolume){
+        for (Volume volume : categorieExistante.getListeVolumes()) {
+            if (volume.getIdVol() == nomVolume) {
+                volumeExistant = volume;
+                break;
+            }
+        }
+
+        if (volumeExistant == null) {
+            volumeExistant = new Volume(nomVolume);
+            categorieExistante.ajouterVolume(volumeExistant);
+        }
+
+        return volumeExistant;
+    }
+
+    public void ajouterProduit(Entrepot entrepot, char nomCategorie, int nomVolume, String nomProduitA2) {
+        Categorie categorieExistante = null;
+
+        VerifCat(categorieExistante, nomCategorie);
+
+        Volume volumeExistant = null;
+        VerifVol(volumeExistant, categorieExistante, nomVolume);
+
+
+        Produit produitA2 = new Produit(nomProduitA2);
+        volumeExistant.ajouterProduit(produitA2);
+
+        System.out.println("Produit A2 ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
+    }
+
 }
