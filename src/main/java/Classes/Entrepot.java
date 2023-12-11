@@ -21,6 +21,14 @@ public class Entrepot {
         categories.remove(categorie);
     }
 
+    //
+    public void AjouterProduit(String chaineDeProduits){
+
+        // Séparation de chaque produit
+
+            // Ajout de chaque produits 1 par 1
+    }
+
     public List<Categorie> getListeCategories() {
         return categories;
     }
