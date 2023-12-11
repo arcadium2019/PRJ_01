@@ -12,7 +12,7 @@ public class Entrepot {
     }
 
     // méthode permettant d’ajouter une Catégorie dans la liste
-    public void ajouterCategorie(Categorie categorie) {
+    private void ajouterCategorie(Categorie categorie) {
         categories.add(categorie);
     }
 
@@ -21,19 +21,11 @@ public class Entrepot {
         categories.remove(categorie);
     }
 
-    //
-    public void AjouterProduit(String chaineDeProduits){
-
-        // Séparation de chaque produit
-
-            // Ajout de chaque produits 1 par 1
-    }
-
     public List<Categorie> getListeCategories() {
         return categories;
     }
 
-    public Categorie VerifCat(Categorie categorieExistante, char nomCategorie){
+    private Categorie VerifCat(Categorie categorieExistante, char nomCategorie){
         for (Categorie categorie : getListeCategories()) {
             if (categorie.getIdCat() == nomCategorie) {
                 categorieExistante = categorie;
@@ -47,7 +39,7 @@ public class Entrepot {
         return categorieExistante;
     }
 
-    public Volume VerifVol(Volume volumeExistant, Categorie categorieExistante, int nomVolume){
+    private Volume VerifVol(Volume volumeExistant, Categorie categorieExistante, int nomVolume){
         for (Volume volume : categorieExistante.getListeVolumes()) {
             if (volume.getIdVol() == nomVolume) {
                 volumeExistant = volume;
@@ -59,18 +51,15 @@ public class Entrepot {
             volumeExistant = new Volume(nomVolume);
             categorieExistante.ajouterVolume(volumeExistant);
         }
-
         return volumeExistant;
     }
 
-    public void ajouterProduit(Entrepot entrepot, char nomCategorie, int nomVolume, String nomProduitA2) {
+    public void ajouterProduit(char nomCategorie, int nomVolume, String nomProduitA2) {
         Categorie categorieExistante = null;
-
-        VerifCat(categorieExistante, nomCategorie);
+        categorieExistante = VerifCat(categorieExistante, nomCategorie);
 
         Volume volumeExistant = null;
-        VerifVol(volumeExistant, categorieExistante, nomVolume);
-
+        volumeExistant = VerifVol(volumeExistant, categorieExistante, nomVolume);
 
         Produit produitA2 = new Produit(nomProduitA2);
         volumeExistant.ajouterProduit(produitA2);
