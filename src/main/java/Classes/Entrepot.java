@@ -54,17 +54,17 @@ public class Entrepot {
         return volumeExistant;
     }
 
-    public void ajouterProduit(char nomCategorie, int nomVolume, String nomProduitA2) {
+    public void ajouterProduit(char nomCategorie, int nomVolume, String nomProduit) {
         Categorie categorieExistante = null;
         categorieExistante = VerifCat(categorieExistante, nomCategorie);
 
         Volume volumeExistant = null;
         volumeExistant = VerifVol(volumeExistant, categorieExistante, nomVolume);
 
-        Produit produitA2 = new Produit(nomProduitA2);
-        volumeExistant.ajouterProduit(produitA2);
+        Produit produit = new Produit(nomProduit);
+        volumeExistant.ajouterProduit(produit);
 
-        System.out.println("Produit A2 ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
+        System.out.println("Produit " +nomProduit.toString()+ " ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
     }
 
 }
