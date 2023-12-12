@@ -127,7 +127,6 @@ public class Entrepot {
     }
 
     public void afficherContenuEntrepot() {
-        List<Categorie> categories = getListeCategories();
 
         if (categories.isEmpty()) {
             System.out.println("L'entrepôt est vide.");
