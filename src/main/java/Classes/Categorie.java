@@ -19,8 +19,12 @@ public class Categorie {
     }
 
     // méthode permettant de supprimer un Volume vide (sans Produit)
-    public void supprimerVolume(Volume volume) {
-        volumes.remove(volume);
+    public Volume supprimerPremierProduit() {
+        if (!volumes.isEmpty()) {
+            return volumes.remove(0);
+        } else {
+            return null; // Si la liste est vide, retourne null
+        }
     }
 
     public List<Volume> getListeVolumes() {
