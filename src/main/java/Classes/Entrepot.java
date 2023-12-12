@@ -107,6 +107,17 @@ public class Entrepot {
                 for (Produit produit : volume.getListeProduits()) {
                     if (produit.getNom().equals(nomProduit)) {
                         volume.supprimerProduit(produit); // Supprime le produit du volume
+
+                        // Vérifie si c'était le dernier produit dans le volume
+                        if (volume.getListeProduits().isEmpty()) {
+                            categorie.supprimerVolume(volume); // Supprime le volume de la catégorie
+
+                            // Vérifie si c'était le dernier volume dans la catégorie
+                            if (categorie.getListeVolumes().isEmpty()) {
+                                categories.remove(categorie); // Supprime la catégorie de la liste d'entrepôt
+                            }
+                        }
+
                         return produit; // Retourne le produit trouvé
                     }
                 }
@@ -114,6 +125,7 @@ public class Entrepot {
         }
         return null; // Si le produit n'est pas trouvé, retourne null
     }
+
 
 
 }
