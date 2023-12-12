@@ -11,8 +11,6 @@ public class Main {
 
         entrepot1.ajouterProduitsEnLot();
         entrepot1.afficherContenuEntrepot();
-
-
     }
 
 }

@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -13,10 +14,13 @@ public class Colis {
         produits = new ArrayList<>();
     }
 
-    public void Empiler(int tailleVolume, Produit produit){
+    private void Empiler(int tailleVolume, Produit produit){
+
+        Comparator<Produit> comparateur = Comparator.comparing(p -> Character.getNumericValue(p.getNom().charAt(1)));
 
         produits.add(produit);
-        //produits.sort(Comparator.comparingInt(produit -> Character.getNumericValue(produit.getNom().charAt(1))));
+        
+        Collections.sort(produits, comparateur);
 
     }
 
