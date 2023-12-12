@@ -8,18 +8,28 @@ public class Log {
         alarmes = new Alarme[3];
     }
 
-    // méthode permettant de traiter et de supprimer toutes les alarme de la plus ancienne à la plus récente.
+    // méthode permettant de traiter et de supprimer toutes les alarmes de la plus ancienne à la plus récente.
     public void GestionAlarme(){
-        // a rédiger
+        for (Alarme alarme : alarmes) {
+            alarme.PrintAlerte();
+        }
+        alarmes = new Alarme[3];
     }
 
     // méthode permettant d’ajouter une alerte en fin de tableau
-    public void AjoutAlarme(){
-        // a rédiger
+    public void AjoutAlarme(Alarme nouvelleAlarme) {
+        for (int i = 0; i < 3; i++) {
+            if (alarmes[i] == null) {
+                alarmes[i] = nouvelleAlarme;
+                return;
+            }
+        }
+    
+        GestionAlarme();
+        alarmes[0] = nouvelleAlarme;
     }
 
     public Alarme[] getListeAlarmes() {
         return alarmes;
     }
-    
 }
