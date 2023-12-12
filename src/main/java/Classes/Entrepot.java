@@ -14,12 +14,16 @@ public class Entrepot {
 
     // méthode permettant d’ajouter une Catégorie dans la liste
     private void ajouterCategorie(Categorie categorie) {
-        categories.add(categorie);
+        categories.add(categories.size() ,categorie);
     }
 
     // méthode permettant de supprimer une Catégorie vide (sans Volume)
-    public void supprimerCategorie(Categorie categorie) {
-        categories.remove(categorie);
+    public Categorie supprimerCategorie() {
+        if (!categories.isEmpty()) {
+            return categories.remove(0);
+        } else {
+            return null; // Si la liste est vide, retourne null
+        }
     }
 
     public List<Categorie> getListeCategories() {
@@ -73,23 +77,23 @@ public class Entrepot {
         System.out.println("Combien de produits souhaitez-vous ajouter ?");
         int nombreProduits = scanner.nextInt();
 
-        scanner.nextLine();
+        scanner.nextLine(); // Pour consommer le saut de ligne
 
         for (int i = 0; i < nombreProduits; i++) {
-            System.out.println("Entrez le nom de la catégorie :");
-            char nomCategorie = scanner.next().charAt(0);
+            System.out.println("Entrez le nom du produit :");
+            String nomProduit = scanner.nextLine();
 
-            System.out.println("Entrez le numéro du volume :");
-            int nomVolume = scanner.nextInt();
+            if (nomProduit.length() >= 2) {
+                char nomCategorie = nomProduit.charAt(0);
+                int nomVolume = Character.getNumericValue(nomProduit.charAt(1));
 
-            scanner.nextLine();
-
-            String nomProduit = String.valueOf(nomCategorie) + nomVolume;
-
-            ajouterProduit(nomCategorie, nomVolume, nomProduit);
+                // Appel de la méthode pour ajouter le produit avec les informations déduites
+                ajouterProduit(nomCategorie, nomVolume, nomProduit);
+            } else {
+                System.out.println("Le nom du produit doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
+            }
         }
     }
-
 
 
 }

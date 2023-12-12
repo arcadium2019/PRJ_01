@@ -15,14 +15,19 @@ public class Volume {
 
     // méthode permettant d’ajouter un produit en fin de liste
     public void ajouterProduit(Produit produit) {
-        produits.add(produit);
+        produits.add(produits.size(), produit);
     }
 
     // méthode permettant de sortir le premier élément de la liste pour l’envoyer dans une commande
     // (retourne le dernier élément de la liste)
-    public void supprimerProduit(Produit produit) {
-        produits.remove(produit);
+    public Produit supprimerPremierProduit() {
+        if (!produits.isEmpty()) {
+            return produits.remove(0);
+        } else {
+            return null; // Si la liste est vide, retourne null
+        }
     }
+
 
     public List<Produit> getListeProduits() {
         return produits;

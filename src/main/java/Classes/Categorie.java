@@ -15,7 +15,7 @@ public class Categorie {
 
     // méthode permettant d’ajouter un Volume dans la liste
     public void ajouterVolume(Volume volume) {
-        volumes.add(volume);
+        volumes.add(volumes.size() ,volume);
     }
 
     // méthode permettant de supprimer un Volume vide (sans Produit)
