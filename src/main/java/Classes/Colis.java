@@ -27,6 +27,7 @@ public class Colis {
     // méthode permettant de ranger du plus grand volume au plus petit tous les Produits dans le Colis
     public void Assambler(Entrepot entrepot){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("\nDonnez le contenu souhaité de votre Colis : ");
         String chaineProduits = scanner.nextLine();
 
         String[] tableauProduits = chaineProduits.replaceAll("\\s", "").split(",");

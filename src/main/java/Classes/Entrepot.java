@@ -79,6 +79,27 @@ public class Entrepot {
         return nomProduit;
     }
 
+    public void ajouterProduitsEnChaine(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mettez la liste des produits que vous souhaitez ajouter ?");
+        String chaineProduits = scanner.nextLine();
+
+        String[] tableauProduits = chaineProduits.replaceAll("\\s", "").split(",");
+        
+        for(String nomProduit : tableauProduits){
+            if(nomProduit.length() >= 2){
+                char nomCategorie = nomProduit.charAt(0);
+                int nomVolume = Character.getNumericValue(nomProduit.charAt(1));
+
+                // Appel de la méthode pour ajouter le produit avec les informations déduites
+                ajouterProduit(nomCategorie, nomVolume, nomProduit);
+            } else {
+                System.out.println("Le produit "+nomProduit+" est invalide, doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
+            }
+        }
+
+    }
+
     public void ajouterProduitsEnLot() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Combien de produits souhaitez-vous ajouter ?");
