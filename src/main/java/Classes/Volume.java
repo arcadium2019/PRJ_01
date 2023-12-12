@@ -20,7 +20,7 @@ public class Volume {
 
     // méthode permettant de sortir le premier élément de la liste pour l’envoyer dans une commande
     // (retourne le dernier élément de la liste)
-    public Produit supprimerPremierProduit() {
+    public Produit supprimerProduit() {
         if (!produits.isEmpty()) {
             return produits.remove(0);
         } else {

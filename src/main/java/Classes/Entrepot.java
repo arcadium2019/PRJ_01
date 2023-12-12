@@ -72,6 +72,13 @@ public class Entrepot {
         System.out.println("Produit ajouté avec succès au volume " + nomVolume + " de la catégorie " + nomCategorie);
     }
 
+    private String saisieNomPoduit(Scanner scanner){
+        System.out.println("Entrez le nom du produit :");
+        String nomProduit = scanner.nextLine();
+
+        return nomProduit;
+    }
+
     public void ajouterProduitsEnLot() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Combien de produits souhaitez-vous ajouter ?");
@@ -80,8 +87,7 @@ public class Entrepot {
         scanner.nextLine(); // Pour consommer le saut de ligne
 
         for (int i = 0; i < nombreProduits; i++) {
-            System.out.println("Entrez le nom du produit :");
-            String nomProduit = scanner.nextLine();
+            String nomProduit = saisieNomPoduit(scanner);
 
             if (nomProduit.length() >= 2) {
                 char nomCategorie = nomProduit.charAt(0);
@@ -93,6 +99,20 @@ public class Entrepot {
                 System.out.println("Le nom du produit doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
             }
         }
+    }
+
+    public Produit recupererProduit(String nomProduit) {
+        for (Categorie categorie : categories) {
+            for (Volume volume : categorie.getListeVolumes()) {
+                for (Produit produit : volume.getListeProduits()) {
+                    if (produit.getNom().equals(nomProduit)) {
+                        volume.supprimerProduit(produit); // Supprime le produit du volume
+                        return produit; // Retourne le produit trouvé
+                    }
+                }
+            }
+        }
+        return null; // Si le produit n'est pas trouvé, retourne null
     }
 
 
