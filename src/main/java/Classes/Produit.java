@@ -14,8 +14,7 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "Produit{" +
-                "nom='" + nom + '\'' +
-                '}';
+        return "" +
+                "\t - nom='" + nom + '\'';
     }
 }
