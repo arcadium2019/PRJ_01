@@ -1,7 +1,6 @@
 package org.example;
 
 import Classes.Entrepot;
-import UseEntrepot.UseEntrepot;
 
 public class Main {
 
@@ -11,8 +10,9 @@ public class Main {
         Entrepot entrepot1 = new Entrepot();
 
         entrepot1.ajouterProduitsEnLot();
+        entrepot1.afficherContenuEntrepot();
 
-        UseEntrepot.afficherContenuEntrepot(entrepot1);
+
     }
 
 }

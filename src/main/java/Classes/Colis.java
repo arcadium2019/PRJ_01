@@ -38,4 +38,12 @@ public class Colis {
     public List<Produit> getContenuColis() {
         return produits;
     }
+
+    public void afficherContenuColis() {
+        System.out.println("Contenu du colis :");
+
+        for (Produit produit : produits) {
+            System.out.println(produit);
+        }
+    }
 }

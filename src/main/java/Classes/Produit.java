@@ -12,4 +12,10 @@ public class Produit {
         return nom;
     }
 
+    @Override
+    public String toString() {
+        return "Produit{" +
+                "nom='" + nom + '\'' +
+                '}';
+    }
 }
