@@ -2,6 +2,7 @@ package Classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Entrepot {
@@ -154,6 +155,21 @@ public class Entrepot {
                     }
                 }
             }
+        }
+    }
+
+    public void remplirEntrepotAleatoirement(int nombreProduits) {
+        Random random = new Random();
+        char[] lettres = {'A', 'B', 'C', 'D', 'E', 'F'};
+
+        for (int i = 0; i < nombreProduits; i++) {
+            char nomLettre = lettres[random.nextInt(lettres.length)];
+            int nomChiffre = random.nextInt(7) + 1;
+            String nomProduit = String.valueOf(nomLettre) + nomChiffre;
+
+            // Ajouter le produit dans l'entrepôt
+            // Assumer que vous avez une méthode pour ajouter un produit à l'entrepôt
+            this.ajouterProduit(nomLettre, nomChiffre, nomProduit); // Changer les valeurs si besoin selon la logique de votre application
         }
     }
 
