@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class Entrepot {
 
     private List<Categorie> categories;
+    private Log log;
 
     public Entrepot() {
         categories = new ArrayList<>();
+        log = new Log();
     }
 
     // méthode permettant d’ajouter une Catégorie dans la liste
@@ -127,7 +129,11 @@ public class Entrepot {
         for (Categorie categorie : categories) {
             for (Volume volume : categorie.getListeVolumes()) {
                 for (Produit produit : volume.getListeProduits()) {
+
                     if (produit.getNom().equals(nomProduit)) {
+                        if(volume.getListeProduits().size() < 3){
+                            log.AjoutAlarme(new Alarme(nomProduit));
+                        }
                         volume.supprimerProduit(produit); // Supprime le produit du volume
 
                         // Vérifie si c'était le dernier produit dans le volume
@@ -145,6 +151,7 @@ public class Entrepot {
                 }
             }
         }
+        log.AjoutAlarme(new Alarme(nomProduit));
         return null; // Si le produit n'est pas trouvé, retourne null
     }
 

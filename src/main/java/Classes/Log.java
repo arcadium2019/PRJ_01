@@ -18,6 +18,8 @@ public class Log {
 
     // méthode permettant d’ajouter une alerte en fin de tableau
     public void AjoutAlarme(Alarme nouvelleAlarme) {
+        System.out.println("Attention, il y a moins de 3 produit '"+nouvelleAlarme.getId()+"' dans votre entrepot");
+
         for (int i = 0; i < 3; i++) {
             if (alarmes[i] == null) {
                 alarmes[i] = nouvelleAlarme;

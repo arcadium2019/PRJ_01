@@ -21,6 +21,8 @@ public class Main {
         monColis.Assambler(entrepot1);
 
         monColis.afficherContenuColis();
+        
+        entrepot1.afficherContenuEntrepot();
     }
 
 }

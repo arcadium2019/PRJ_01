@@ -12,5 +12,9 @@ public class Alarme {
     public void PrintAlerte() {
         System.out.println("Il faut faire une commande de re-stock pour le produits : " + id);
     }
+
+    public String getId() {
+        return id;
+    }
     
 }
