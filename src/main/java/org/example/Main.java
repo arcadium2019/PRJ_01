@@ -1,6 +1,7 @@
 package org.example;
 
 import Classes.Entrepot;
+import Classes.Colis;
 import UseEntrepot.UseEntrepot;
 
 public class Main {
@@ -13,6 +14,12 @@ public class Main {
         entrepot1.ajouterProduitsEnLot();
 
         UseEntrepot.afficherContenuEntrepot(entrepot1);
+
+        Colis monColis = new Colis();
+
+        monColis.Assambler(entrepot1);
+
+        System.out.println(monColis.toString());
     }
 
 }
