@@ -10,6 +10,9 @@ public class Main {
 
         Entrepot entrepot1 = new Entrepot();
 
+        entrepot1.remplirEntrepotAleatoirement(50);
+        entrepot1.afficherContenuEntrepot();
+
         entrepot1.ajouterProduitsEnLot();
         entrepot1.afficherContenuEntrepot();
 
