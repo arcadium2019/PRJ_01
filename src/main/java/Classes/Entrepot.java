@@ -185,7 +185,7 @@ public class Entrepot {
 
         for (int i = 0; i < nombreProduits; i++) {
             char nomLettre = lettres[random.nextInt(lettres.length)];
-            int nomChiffre = random.nextInt(7) + 1;
+            int nomChiffre = random.nextInt(5) + 1;
             String nomProduit = String.valueOf(nomLettre) + nomChiffre;
 
             // Ajouter le produit dans l'entrepôt
