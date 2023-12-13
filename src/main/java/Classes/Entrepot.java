@@ -1,5 +1,6 @@
 package Classes;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -187,7 +188,7 @@ public class Entrepot {
     }
 
     public void remplirEntrepotAleatoirement(int nombreProduits) {
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
         char[] lettres = {'A', 'B', 'C', 'D', 'E', 'F'};
 
         for (int i = 0; i < nombreProduits; i++) {
