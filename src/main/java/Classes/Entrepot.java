@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Entrepot {
 
+    private static final Logger logger = Logger.getLogger( Colis.class.getPackage().getName() );
     private List<Categorie> categories;
     private Log log;
 
@@ -98,7 +100,7 @@ public class Entrepot {
                 // Appel de la méthode pour ajouter le produit avec les informations déduites
                 ajouterProduit(nomCategorie, nomVolume, nomProduit);
             } else {
-                System.out.println("Le produit "+nomProduit+" est invalide, doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
+                logger.info("Le produit "+nomProduit+" est invalide, doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
             }
         }
 
@@ -121,7 +123,7 @@ public class Entrepot {
                 // Appel de la méthode pour ajouter le produit avec les informations déduites
                 ajouterProduit(nomCategorie, nomVolume, nomProduit);
             } else {
-                System.out.println("Le nom du produit doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
+                logger.info("Le nom du produit doit avoir au moins deux caractères pour déduire le nom de la catégorie et du volume.");
             }
         }
     }
@@ -159,27 +161,27 @@ public class Entrepot {
     public void afficherContenuEntrepot() {
 
         if (categories.isEmpty()) {
-            System.out.println("L'entrepôt est vide.");
+            logger.info("L'entrepôt est vide.");
             return;
         }
 
         System.out.println("Contenu de l'entrepôt :");
         for (Categorie categorie : categories) {
-            System.out.println("Catégorie : " + categorie.getIdCat());
+            logger.info("Catégorie : " + categorie.getIdCat());
 
             List<Volume> volumes = categorie.getListeVolumes();
             if (volumes.isEmpty()) {
                 System.out.println("\tAucun volume dans cette catégorie");
             } else {
                 for (Volume volume : volumes) {
-                    System.out.println("\tVolume : " + volume.getIdVol());
+                    logger.info("\tVolume : " + volume.getIdVol());
                     List<Produit> produits = volume.getListeProduits();
                     if (produits.isEmpty()) {
-                        System.out.println("\t\tAucun produit dans ce volume");
+                        logger.info("\t\tAucun produit dans ce volume");
                     } else {
-                        System.out.println("\t\tProduits :");
+                        logger.info("\t\tProduits :");
                         for (Produit produit : produits) {
-                            System.out.println("\t\t\t- " + produit.getNom());
+                            logger.info("\t\t\t- " + produit.getNom());
                         }
                     }
                 }

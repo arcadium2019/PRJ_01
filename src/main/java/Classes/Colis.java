@@ -5,8 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Colis {
+    private static final Logger logger = Logger.getLogger( Colis.class.getPackage().getName() );
 
     private List<Produit> produits;
 
@@ -44,11 +46,12 @@ public class Colis {
         return produits;
     }
 
+
     public void afficherContenuColis() {
-        System.out.println("Contenu du colis :");
+        logger.info("Contenu du colis :");
 
         for (Produit produit : produits) {
-            System.out.println(produit);
+            logger.info(""+produit);
         }
     }
 }
