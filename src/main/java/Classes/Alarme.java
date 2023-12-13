@@ -1,7 +1,10 @@
 package Classes;
 
+import java.util.logging.Logger;
+
 public class Alarme {
 
+    private static final Logger logger = Logger.getLogger( Colis.class.getPackage().getName() );
     private String id;
 
     public Alarme(String id) {
@@ -10,7 +13,7 @@ public class Alarme {
     
     // Traite l’alerte en l’affichant
     public void PrintAlerte() {
-        System.out.println("Il faut faire une commande de re-stock pour le produits : " + id);
+        logger.info("Il faut faire une commande de re-stock pour le produits : " + id);
     }
 
     public String getId() {

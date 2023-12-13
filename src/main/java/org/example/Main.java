@@ -6,8 +6,6 @@ import Classes.Colis;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-
         Entrepot entrepot1 = new Entrepot();
 
         entrepot1.remplirEntrepotAleatoirement(50);

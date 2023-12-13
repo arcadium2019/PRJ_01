@@ -171,7 +171,7 @@ public class Entrepot {
 
             List<Volume> volumes = categorie.getListeVolumes();
             if (volumes.isEmpty()) {
-                System.out.println("\tAucun volume dans cette catégorie");
+                logger.info("\tAucun volume dans cette catégorie");
             } else {
                 for (Volume volume : volumes) {
                     logger.info("\tVolume : " + volume.getIdVol());
